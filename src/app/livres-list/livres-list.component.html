@@ -1,0 +1,11 @@
+<ul>
+    <li *ngFor="let l of livres">
+        <app-livre [couv]=l.couverture [nom]=l.titre [date]=l.dateEdition [prix]=l.prix> </app-livre>
+    </li>
+</ul>
+Donner un prix maximum :<input type="text" [(ngModel)]="val2" >
+<button >Nombre de livres </button>
+<span *ngFor="let l of livres ">
+    <ng-container *ngIf="l.prix<val2">n=n+1</ng-container>
+</span>
+{{n}}
